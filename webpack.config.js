@@ -1,11 +1,11 @@
 'use strict'
 
-const { path, resolve } = require('path');
+const { join, resolve } = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: join(__dirname, 'src', 'index.js'),
     output: {
         path: resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -32,8 +32,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./public/index.html",
-            filename: "./index.html"
+            template: join(__dirname, 'public', 'index.html'),
+            filename: "index.html"
         }),
         new FaviconsWebpackPlugin({
             logo: './public/react.png',
