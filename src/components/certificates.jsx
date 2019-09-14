@@ -8,7 +8,7 @@ const Certificates = props => (
         <H2Styled name="Certificates" />
             {props.date.map((cer, index) => (
                 <div className="Certificates-item"  key={`Cer-${index}`}>
-                    <H3Styled>{cer.name} </H3Styled>
+                    <H3Styled>{cer.name} @ {cer.institution}</H3Styled>
                     <PStyled name={cer.description} />
                 </div>
             ))}        
